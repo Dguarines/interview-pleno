@@ -4,6 +4,8 @@ services:
     build:
       context: ./core/src/main/resources/db/schema
     container_name: iv-db
+    environment:
+      - POSTGRES_PASSWORD=admin
     ports:
       - 5432:5432
   core:
@@ -11,5 +13,7 @@ services:
     restart: on-failure
     environment:
       - DB_HOSTNAME=postgres
+    ports:
+      - 8080:8080
     depends_on:
       - postgres
