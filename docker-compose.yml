@@ -1,0 +1,15 @@
+version: "3.5"
+services:
+  postgres:
+    build:
+      context: ./core/src/main/resources/db/schema
+    container_name: iv-db
+    ports:
+      - 5432:5432
+  core:
+    image: brainweb/interview
+    restart: on-failure
+    environment:
+      - DB_HOSTNAME=postgres
+    depends_on:
+      - postgres

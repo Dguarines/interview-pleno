@@ -35,6 +35,12 @@
         </dependency>
 
         <dependency>
+            <groupId>com.github.dozermapper</groupId>
+            <artifactId>dozer-core</artifactId>
+            <version>6.5.0</version>
+        </dependency>
+
+        <dependency>
             <groupId>brainweb</groupId>
             <artifactId>interview-model</artifactId>
         </dependency>
@@ -49,6 +55,10 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
         </dependency>
 
         <!-- Test only -->
@@ -141,7 +151,6 @@
                 <artifactId>fabric8-maven-plugin</artifactId>
                 <version>3.5.31</version>
                 <configuration>
-                    <mode>kubernetes</mode>
                     <images>
                         <image>
                             <name>brainweb/interview</name>
